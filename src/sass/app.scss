@@ -1,0 +1,14 @@
+@import "base/variables-override";
+@import "node_modules/bootstrap/scss/bootstrap";
+@import "base/mixins";
+
+body {
+    padding-top: 56px;
+}
+
+.footer {
+    margin-top:3rem;
+}
+.navbar {
+    border-bottom:1px solid #eee;
+}
