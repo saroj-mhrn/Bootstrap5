@@ -11,6 +11,7 @@ const jsImport = require('gulp-js-import');
 const sourcemaps = require('gulp-sourcemaps');
 const clean = require('gulp-clean');
 const isProd = process.env.NODE_ENV === 'prod';
+const htmlPartial = require('gulp-html-partial');
 
 const htmlFile = [
     'src/*.html'
@@ -18,6 +19,9 @@ const htmlFile = [
 
 function html() {
     return gulp.src(htmlFile)
+        .pipe(htmlPartial({
+            basePath: 'src/partials/'
+        }))
         .pipe(gulpIf(isProd, htmlmin({
             collapseWhitespace: true
         })))
